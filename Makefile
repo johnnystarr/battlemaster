@@ -4,6 +4,7 @@ VENV_BIN = ./venv/bin
 PIP = $(VENV_BIN)/pip
 PYTHON = $(VENV_BIN)/python
 PYTEST = $(VENV_BIN)/pytest
+PYLINT = $(VENV_BIN)/pylint
 
 venv:
 	@python -m venv venv
@@ -19,7 +20,10 @@ install: dependencies
 build: test
 	@$(PYTHON) -m build
 
-test: install
+lint:
+	@$(PYLINT) battlemaster/
+
+test: install lint
 	@$(PYTEST) test/
 
 clean:
