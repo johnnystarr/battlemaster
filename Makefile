@@ -1,22 +1,26 @@
 .DEFAULT_GOAL := build
 .PHONY: dependencies install test build clean
+VENV_BIN = ./venv/bin
+PIP = $(VENV_BIN)/pip
+PYTHON = $(VENV_BIN)/python
+PYTEST = $(VENV_BIN)/pytest
 
 venv:
 	@python -m venv venv
 
 dependencies: venv
-	@./venv/bin/pip install -r requirements.txt
-	@./venv/bin/pip install -r requirements-test.txt
+	@$(PIP) install -r requirements.txt
+	@$(PIP) install -r requirements-test.txt
 
 install: dependencies
-	@./venv/bin/pip install -U pip
-	@./venv/bin/pip install -e .[test]
+	@$(PIP) install -U pip
+	@$(PIP) install -e .[test]
 
 build: test
-	@./venv/bin/python -m build
+	@$(PYTHON) -m build
 
 test: install
-	@./venv/bin/pytest test/
+	@$(PYTEST) test/
 
 clean:
 	@rm -rf dist battlemaster.egg-info
