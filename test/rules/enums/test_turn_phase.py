@@ -1,5 +1,5 @@
 import pytest
-from battlemaster.rules.tables.turn_phase import TurnPhase
+from battlemaster.rules.enums.turn_phase import TurnPhase
 
 
 def test_values():
