@@ -1,0 +1,4 @@
+.idea/
+dist/
+battlemaster.egg-info/
+test/__pycache__/
