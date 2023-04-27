@@ -30,6 +30,8 @@ jobs:
         pip install -r requirements-test.txt
     - name: Build package
       run: python -m build
+    - name: Install package
+      run: pip install -e .[test]
     - name: Test package
       run: |
         pylint battlemaster/
