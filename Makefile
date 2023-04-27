@@ -12,7 +12,7 @@ install: dependencies
 	@./venv/bin/pip install -U pip
 	@./venv/bin/pip install -e .[test]
 
-build: install
+build: test
 	@./venv/bin/python -m build
 
 test: install
