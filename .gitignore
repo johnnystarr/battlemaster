@@ -1,4 +1,6 @@
 .idea/
 dist/
 battlemaster.egg-info/
+battlemaster/__pycache__/
 test/__pycache__/
+venv/
