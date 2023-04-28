@@ -20,10 +20,14 @@ def test_get_one_dimensional(table):
 
 def test_get_two_dimensional(table):
     table.insert(1, [1, 2])
-    # offset can be omitted because it is 0
+    # y can be omitted because it is 0
     assert(table.get(1) == 1)
-    # offset can be explicitly set to 0
-    assert(table.get(1, offset=0) == 1)
-    # offset for anything > 0 must be set
-    assert(table.get(1, offset=1) == 2)
+    # y can be explicitly set to 0
+    assert(table.get(1, y=0) == 1)
+    # y for anything > 0 must be set
+    assert(table.get(1, y=1) == 2)
 
+
+def test_get_sub_table(table):
+    table.insert(1, [1, 2, 3])
+    assert(table.get_sub_table(1) == [1, 2, 3])

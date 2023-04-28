@@ -17,13 +17,23 @@ class RulesTable:
         """
         self.table[index] = value
 
-    def get(self, index, offset=0):
+    def get(self, x, y=0):
         """
         get()
         """
-        if self.table[index]:
-            if isinstance(self.table[index], list):
-                return self.table[index][offset]
-            return self.table[index]
+        if self.table[x]:
+            if isinstance(self.table[x], list):
+                return self.table[x][y]
+            return self.table[x]
 
-        raise IndexError(f"{index} is not a valid index in this array.")
+        raise IndexError(f"{x} is not a valid index in this array.")
+
+    def get_sub_table(self, x):
+        """
+        get_sub_table()
+        """
+        if self.table[x]:
+            if isinstance(self.table[x], list):
+                return self.table[x]
+
+        raise IndexError(f"{x} is not a valid index in this array.")
