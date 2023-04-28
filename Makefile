@@ -27,6 +27,7 @@ lint:
 test: install lint
 	@$(COVERAGE) run -m pytest test/
 	@$(COVERAGE) report
+	@$(COVERAGE) html
 
 clean:
 	@rm -rf dist battlemaster.egg-info
