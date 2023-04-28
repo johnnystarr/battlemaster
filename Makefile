@@ -28,3 +28,8 @@ test: install lint
 
 clean:
 	@rm -rf dist battlemaster.egg-info
+
+purge: clean
+	@rm -rf ./venv
+
+scratch: purge build
