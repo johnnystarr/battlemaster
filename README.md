@@ -1,6 +1,6 @@
 # battlemaster
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/johnnystarr/battlemaster/python-publish.yml?style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/johnnystarr/battlemaster/ci.yml?style=for-the-badge)
 ![PyPI](https://img.shields.io/pypi/v/battlemaster?style=for-the-badge)
 
 ```text
