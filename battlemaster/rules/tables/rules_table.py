@@ -21,7 +21,7 @@ class RulesTable:
         """
         get()
         """
-        if self.table[x]:
+        if x in self.table:
             if isinstance(self.table[x], list):
                 return self.table[x][y]
             return self.table[x]
@@ -32,7 +32,7 @@ class RulesTable:
         """
         get_sub_table()
         """
-        if self.table[x]:
+        if x in self.table:
             if isinstance(self.table[x], list):
                 return self.table[x]
 

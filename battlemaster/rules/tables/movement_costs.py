@@ -1,8 +1,15 @@
 """
-Used to calculate teh cost for moving.
+Used to calculate the cost for moving.
 """
-from battlemaster.rules.enums.hex_type import HexType
 
-MOVEMENT_COSTS = {
-    HexType.CLEAR: 0
-}
+from battlemaster.rules.tables.rules_table import RulesTable
+
+
+def movement_costs_table():
+    """
+    Build the table
+    """
+    table = RulesTable()
+    table.insert(0, 0)
+
+    return table

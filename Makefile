@@ -5,6 +5,7 @@ PIP = $(VENV_BIN)/pip
 PYTHON = $(VENV_BIN)/python
 PYTEST = $(VENV_BIN)/pytest
 PYLINT = $(VENV_BIN)/pylint
+COVERAGE = $(VENV_BIN)/coverage
 
 venv:
 	@python -m venv venv
@@ -24,7 +25,8 @@ lint:
 	@$(PYLINT) battlemaster/
 
 test: install lint
-	@$(PYTEST) test/
+	@$(COVERAGE) run -m pytest test/
+	@$(COVERAGE) report
 
 clean:
 	@rm -rf dist battlemaster.egg-info

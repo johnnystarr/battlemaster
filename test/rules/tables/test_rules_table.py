@@ -31,3 +31,11 @@ def test_get_two_dimensional(table):
 def test_get_sub_table(table):
     table.insert(1, [1, 2, 3])
     assert(table.get_sub_table(1) == [1, 2, 3])
+
+
+def test_bad_indices(table):
+    table.insert(0, 1)
+    with pytest.raises(IndexError):
+        table.get(1)
+    with pytest.raises(IndexError):
+        table.get_sub_table(1)

@@ -1,4 +1,10 @@
-from battlemaster.rules.enums.hex_type import HexType
-from battlemaster.rules.tables.movement_costs import MOVEMENT_COSTS
+import pytest
+from battlemaster.rules.tables.movement_costs import movement_costs_table
 
-assert MOVEMENT_COSTS[HexType.CLEAR] == 0
+@pytest.fixture()
+def movement_costs():
+    return movement_costs_table()
+
+
+def test_movement_cost_values(movement_costs):
+    assert movement_costs.get(0) == 0
